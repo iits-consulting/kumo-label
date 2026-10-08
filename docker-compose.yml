@@ -1,0 +1,20 @@
+services:
+  kumo-label:
+    build: .
+    image: kumo-label
+    ports:
+      - "8000:8000"
+    volumes:
+      # Datasets live here; in the app, point the dataset path at /data/<name>.
+      # kumo.db, embeddings, and training runs are written next to the images,
+      # so this one mount persists everything.
+      - ./data:/data
+      # Downloaded HuggingFace models (embeddings + training backbones)
+      - hf-cache:/root/.cache/huggingface
+    # PyTorch DataLoaders (num_workers=4) use shared memory; the Docker
+    # default of 64 MB is too small and crashes training.
+    shm_size: "2gb"
+    restart: unless-stopped
+
+volumes:
+  hf-cache:
