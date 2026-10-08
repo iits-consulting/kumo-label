@@ -1,0 +1,16 @@
+lr: 0.001
+epochs: 10
+batch_size: 32
+optimizer: adamw
+scheduler: cosine
+warmup_epochs: 0
+weight_decay: 0.01
+freeze_backbone: false
+early_stopping: false
+early_stopping_patience: 5
+precision: "32-true"
+accumulate_grad_batches: 1
+gradient_clip_val: 0.0
+val_check_interval: 1.0
+limit_train_batches: 0
+class_balance_strategy: "none"

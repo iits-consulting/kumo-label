@@ -1,0 +1,8 @@
+.claude
+.vsc
+.superpowers/
+example-data/
+docs/
+data/
+.DS_Store
+.idea/

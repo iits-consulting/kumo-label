@@ -1,0 +1,3 @@
+hf_model_id: google/vit-base-patch16-224
+display_name: ViT-Base
+image_size: 224

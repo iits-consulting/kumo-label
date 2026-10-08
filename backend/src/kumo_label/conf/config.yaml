@@ -1,0 +1,17 @@
+defaults:
+  - model: vit_base
+  - training: default
+  - augmentation: default
+
+# Required — passed as Hydra overrides by the backend
+db_path: ???
+run_id: ???
+output_dir: ???
+class_names: ???
+num_classes: ???
+task_type: classification
+split_ratio: 0.8
+# "auto" → use assigned val split if any image is marked 'valid', else random.
+# "user_defined" → always use assigned splits. "random" → always random split.
+validation_mode: auto
+checkpoint_path: null
